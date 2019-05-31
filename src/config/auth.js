@@ -1,4 +1,4 @@
 module.exports = {
-  secret: 'marketplace',
-  ttl: 86400
+  secret: process.env.AUTH_APP_SECRET,
+  ttl: process.env.AUTH_APP_TTL
 }

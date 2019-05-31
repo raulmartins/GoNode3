@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const routes = require('./routes')
 const mongoose = require('mongoose')
@@ -47,7 +48,7 @@ class App {
       }
       if (process.env.NODE_ENV !== 'production') {
         const youch = new Youch(err, req)
-        res.send(await youch.toHTML())
+        res.send(await youch.toJSON())
       }
       return res
         .status(err.status || 500)
