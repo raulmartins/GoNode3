@@ -37,5 +37,13 @@ routes.post(
   validate(validators.Purchase),
   expressAsyncHandler(controllers.PurchaseController.store)
 )
+routes.get(
+  '/purchase',
+  expressAsyncHandler(controllers.PurchaseController.index)
+)
+routes.get(
+  '/purchase/:id',
+  expressAsyncHandler(controllers.PurchaseController.sold)
+)
 
 module.exports = routes
